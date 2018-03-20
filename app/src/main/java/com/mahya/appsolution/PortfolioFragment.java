@@ -1,6 +1,7 @@
 package com.mahya.appsolution;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -18,6 +19,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.UnsupportedEncodingException;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.mahya.appsolution.SplashActivity.MY_PREFS_NAME;
 
 public class PortfolioFragment extends Fragment {
 
@@ -50,6 +54,9 @@ public class PortfolioFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_portfolio, container, false);
 
+        SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        String defaultValue = prefs.getString("language", null);
+
         imageViewOne = (ImageView) v.findViewById(R.id.imageViewPortfolioOne);
         imageViewTwo = (ImageView) v.findViewById(R.id.imageViewPortfolioTwo);
         imageViewThree = (ImageView) v.findViewById(R.id.imageViewPortfolioThree);
@@ -60,13 +67,26 @@ public class PortfolioFragment extends Fragment {
 
         downloadImage("Portfolio1.JPG", imageViewOne);
         downloadImage("portfolio2.JPG", imageViewTwo);
-        downloadText("portfolio_two.txt", textViewTwo);
 
         downloadImage("portfolio3.JPG", imageViewThree);
-        downloadText("portfolio_three.txt", textViewThree);
 
         downloadImage("portfolio4.JPG", imageViewFour);
-        downloadText("portfolio_four.txt", textViewFour);
+
+        if(defaultValue.matches("fi")) {
+            downloadText("portfolio_two_fi.txt", textViewTwo);
+            downloadText("portfolio_three_fi.txt", textViewThree);
+            downloadText("portfolio_four_fi.txt", textViewFour);
+        }
+        else if(defaultValue.matches("en")) {
+            downloadText("portfolio_two.txt", textViewTwo);
+            downloadText("portfolio_three.txt", textViewThree);
+            downloadText("portfolio_four.txt", textViewFour);
+        }
+        else if(defaultValue.matches("sw")) {
+            downloadText("portfolio_two_sw.txt", textViewTwo);
+            downloadText("portfolio_three_sw.txt", textViewThree);
+            downloadText("portfolio_four_sw.txt", textViewFour);
+        }
 
         return v;
     }

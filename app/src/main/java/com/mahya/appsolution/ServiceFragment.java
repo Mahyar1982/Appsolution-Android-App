@@ -1,6 +1,7 @@
 package com.mahya.appsolution;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -18,6 +19,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.UnsupportedEncodingException;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.mahya.appsolution.SplashActivity.MY_PREFS_NAME;
 
 public class ServiceFragment extends Fragment {
 
@@ -50,6 +54,9 @@ public class ServiceFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_service, container, false);
 
+        SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        String defaultValue = prefs.getString("language", null);
+
         imageViewOne = (ImageView) v.findViewById(R.id.imageViewServiceOne);
         imageViewTwo = (ImageView) v.findViewById(R.id.imageViewServiceTwo);
         imageViewThree = (ImageView) v.findViewById(R.id.imageViewServiceThree);
@@ -60,13 +67,26 @@ public class ServiceFragment extends Fragment {
 
         downloadImage("slider5.jpeg", imageViewOne);
         downloadImage("Android_app.png", imageViewTwo);
-        downloadText("textview_service_two.txt", textViewTwo);
 
         downloadImage("android_design.png", imageViewThree);
-        downloadText("textview_service_three.txt", textViewThree);
 
         downloadImage("support-487504_960_720.jpg", imageViewFour);
-        downloadText("textview_service_four.txt", textViewFour);
+
+        if(defaultValue.matches("fi")) {
+            downloadText("textview_service_two_fi.txt", textViewTwo);
+            downloadText("textview_service_three_fi.txt", textViewThree);
+            downloadText("textview_service_four_fi.txt", textViewFour);
+        }
+        else if(defaultValue.matches("en")) {
+            downloadText("textview_service_two.txt", textViewTwo);
+            downloadText("textview_service_three.txt", textViewThree);
+            downloadText("textview_service_four.txt", textViewFour);
+        }
+        else if(defaultValue.matches("sw")) {
+            downloadText("textview_service_two_sw.txt", textViewTwo);
+            downloadText("textview_service_three_sw.txt", textViewThree);
+            downloadText("textview_service_four_sw.txt", textViewFour);
+        }
 
         return v;
     }
