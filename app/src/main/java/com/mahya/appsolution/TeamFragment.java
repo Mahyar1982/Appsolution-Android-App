@@ -1,6 +1,7 @@
 package com.mahya.appsolution;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -18,6 +19,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.UnsupportedEncodingException;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.mahya.appsolution.SplashActivity.MY_PREFS_NAME;
 
 public class TeamFragment extends Fragment {
 
@@ -49,6 +53,9 @@ public class TeamFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_team, container, false);
 
+        SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        String defaultValue = prefs.getString("language", null);
+
         imageViewOne = (ImageView) v.findViewById(R.id.imageViewTeamOne);
         imageViewTwo = (ImageView) v.findViewById(R.id.imageViewTeamTwo);
         imageViewThree = (ImageView) v.findViewById(R.id.imageViewTeamThree);
@@ -59,13 +66,26 @@ public class TeamFragment extends Fragment {
 
         downloadImage("team.JPG", imageViewOne);
         downloadImage("Janne.JPG", imageViewTwo);
-        downloadText("Team2.txt", textViewTwo);
 
         downloadImage("harri_new.jpeg", imageViewThree);
-        downloadText("Team3.txt", textViewThree);
 
         downloadImage("mahyar.JPG", imageViewFour);
-        downloadText("Team4.txt", textViewFour);
+
+        if(defaultValue.matches("fi")) {
+            downloadText("Team2_fi.txt", textViewTwo);
+            downloadText("Team3_fi.txt", textViewThree);
+            downloadText("Team4_fi.txt", textViewFour);
+        }
+        else if(defaultValue.matches("en")) {
+            downloadText("Team2.txt", textViewTwo);
+            downloadText("Team3.txt", textViewThree);
+            downloadText("Team4.txt", textViewFour);
+        }
+        else if(defaultValue.matches("sw")) {
+            downloadText("Team2_sw.txt", textViewTwo);
+            downloadText("Team3_sw.txt", textViewThree);
+            downloadText("Team4_sw.txt", textViewFour);
+        }
 
         return v;
     }

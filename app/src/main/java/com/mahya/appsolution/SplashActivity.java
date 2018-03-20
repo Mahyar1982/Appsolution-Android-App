@@ -1,6 +1,7 @@
 package com.mahya.appsolution;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
@@ -20,6 +21,7 @@ public class SplashActivity extends AppCompatActivity {
     private final int splash_display_length = 2000;
     private ProgressBar progressBarSplash;
     private ImageView imageViewSplash;
+    public static final String MY_PREFS_NAME = "MyPrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,10 @@ public class SplashActivity extends AppCompatActivity {
         imageViewSplash = (ImageView) findViewById(R.id.imageViewSplash);
         progressBarSplash = (ProgressBar) findViewById(R.id.progressBarSplash);
         progressBarSplash.setVisibility(View.VISIBLE);
+
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+        editor.putString("language", "en");
+        editor.apply();
 
         //downloadImage("logo.JPG", imageViewSplash);
 
