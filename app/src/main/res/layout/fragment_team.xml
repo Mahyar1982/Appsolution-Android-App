@@ -1,0 +1,186 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginBottom="70dp"
+    tools:context="com.mahya.appsolution.TeamFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageViewTeamOne"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <!--First Team member-->
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/imageViewTeamTwo"
+                    android:layout_width="1dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="4"/>
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical"
+                    android:layout_weight="6"
+                    android:weightSum="4"
+                    android:layout_width="1dp"
+                    android:layout_height="120dp">
+
+                    <TextView
+                        android:id="@+id/textViewTeamTwo"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="2"/>
+
+                    <TextView
+                        android:text="Janne@xenomer.fi"
+                        android:autoLink="email"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:text="+358505670744"
+                        android:autoLink="phone"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Second team member-->
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/imageViewTeamThree"
+                    android:layout_width="1dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="4"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="6"
+                    android:weightSum="4"
+                    android:layout_width="1dp"
+                    android:layout_height="120dp">
+
+                    <TextView
+                        android:id="@+id/textViewTeamThree"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="2"/>
+
+                    <TextView
+                        android:text="Kuuhar@gmail.com"
+                        android:autoLink="email"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:text="+358505020679"
+                        android:autoLink="phone"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Third team member-->
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:weightSum="10">
+
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/imageViewTeamFour"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"/>
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical"
+                    android:layout_weight="6"
+                    android:weightSum="4"
+                    android:layout_width="1dp"
+                    android:layout_height="120dp">
+
+                    <TextView
+                        android:id="@+id/textViewTeamFour"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="2"/>
+
+                    <TextView
+                        android:text="mahyaar.mohammadi@gmail.com"
+                        android:autoLink="email"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:text="+358417543124"
+                        android:autoLink="phone"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
