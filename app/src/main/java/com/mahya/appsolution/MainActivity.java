@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zopim.android.sdk.prechat.ZopimChatActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private android.support.v4.app.Fragment selectedFragment;
@@ -78,6 +80,13 @@ public class MainActivity extends AppCompatActivity {
         if(id == R.id.language) {
             Intent intent = new Intent(MainActivity.this, LanguageActivity.class);
             startActivity(intent);
+
+            return true;
+        }
+        if(id == R.id.chatButton) {
+            startActivity(new Intent(this, ZopimChatActivity.class));
+            //Intent intent = new Intent(MainActivity.this, LanguageActivity.class);
+            //startActivity(intent);
 
             return true;
         }

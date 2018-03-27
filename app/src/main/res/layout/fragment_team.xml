@@ -58,7 +58,7 @@
                         android:layout_weight="2"/>
 
                     <TextView
-                        android:text="Janne@xenomer.fi"
+                        android:id="@+id/textViewTeamTwoEmail"
                         android:autoLink="email"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
                         android:layout_weight="1"/>
 
                     <TextView
-                        android:text="+358505670744"
+                        android:id="@+id/textViewTeamTwoPhone"
                         android:autoLink="phone"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                         android:layout_weight="2"/>
 
                     <TextView
-                        android:text="Kuuhar@gmail.com"
+                        android:id="@+id/textViewTeamThreeEmail"
                         android:autoLink="email"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
                         android:layout_weight="1"/>
 
                     <TextView
-                        android:text="+358505020679"
+                        android:id="@+id/textViewTeamThreePhone"
                         android:autoLink="phone"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -160,7 +160,7 @@
                         android:layout_weight="2"/>
 
                     <TextView
-                        android:text="mahyaar.mohammadi@gmail.com"
+                        android:id="@+id/textViewTeamFourEmail"
                         android:autoLink="email"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -168,7 +168,7 @@
                         android:layout_weight="1"/>
 
                     <TextView
-                        android:text="+358417543124"
+                        android:id="@+id/textViewTeamFourPhone"
                         android:autoLink="phone"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
