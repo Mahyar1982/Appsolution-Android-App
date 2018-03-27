@@ -26,7 +26,8 @@ import static com.mahya.appsolution.SplashActivity.MY_PREFS_NAME;
 public class TeamFragment extends Fragment {
 
     private ImageView imageViewOne, imageViewTwo, imageViewThree, imageViewFour;
-    private TextView textViewTwo, textViewThree, textViewFour;
+    private TextView textViewTwo, textViewThree, textViewFour, textViewTwoEmail, textViewTwoPhone, textViewThreeEmail, textViewThreePhone,
+                    textViewFourEmail, textViewFourPhone;
     private OnFragmentInteractionListener mListener;
 
     public TeamFragment() {
@@ -61,8 +62,14 @@ public class TeamFragment extends Fragment {
         imageViewThree = (ImageView) v.findViewById(R.id.imageViewTeamThree);
         imageViewFour = (ImageView) v.findViewById(R.id.imageViewTeamFour);
         textViewTwo = (TextView) v.findViewById(R.id.textViewTeamTwo);
+        textViewTwoPhone = (TextView) v.findViewById(R.id.textViewTeamTwoPhone);
+        textViewTwoEmail = (TextView) v.findViewById(R.id.textViewTeamTwoEmail);
         textViewThree = (TextView) v.findViewById(R.id.textViewTeamThree);
+        textViewThreePhone = (TextView) v.findViewById(R.id.textViewTeamThreePhone);
+        textViewThreeEmail = (TextView) v.findViewById(R.id.textViewTeamThreeEmail);
         textViewFour = (TextView) v.findViewById(R.id.textViewTeamFour);
+        textViewFourPhone = (TextView) v.findViewById(R.id.textViewTeamFourPhone);
+        textViewFourEmail = (TextView) v.findViewById(R.id.textViewTeamFourEmail);
 
         downloadImage("team.JPG", imageViewOne);
         downloadImage("Janne.JPG", imageViewTwo);
@@ -70,6 +77,15 @@ public class TeamFragment extends Fragment {
         downloadImage("harri_new.jpeg", imageViewThree);
 
         downloadImage("mahyar.JPG", imageViewFour);
+
+        downloadText("text_team_two_phone.txt", textViewTwoPhone);
+        downloadText("text_team_two_email.txt", textViewTwoEmail);
+
+        downloadText("text_team_three_phone.txt", textViewThreePhone);
+        downloadText("text_team_three_email.txt", textViewThreeEmail);
+
+        downloadText("text_team_four_phone.txt", textViewFourPhone);
+        downloadText("text_team_four_email.txt", textViewFourEmail);
 
         if(defaultValue.matches("fi")) {
             downloadText("Team2_fi.txt", textViewTwo);

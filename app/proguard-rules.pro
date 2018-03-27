@@ -19,3 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Chat sdk
+-keep public interface com.zopim.android.** { *; }
+-keep public class com.zopim.android.** { *; }
